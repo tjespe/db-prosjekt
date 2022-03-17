@@ -1,0 +1,5 @@
+{
+  "python.formatting.provider": "black",
+  "files.autoSave": "onFocusChange",
+  "liveshare.allowGuestDebugControl": true
+}

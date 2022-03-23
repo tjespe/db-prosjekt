@@ -19,4 +19,4 @@ def search_by_description():
         """,
         (f"%{search_term}%", f"%{search_term}%"),
     ):
-        print("\t".join(str(value).ljust(15) for value in row))
+        print("\t".join(str(value).ljust(20) for value in row))

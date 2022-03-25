@@ -27,5 +27,10 @@ def print_column_titles(*titles, width=15, widths=None):
     )
 
 
-def get_placeholders(array):
+def safe_get_placeholders(array):
+    """
+    Safely returns an appropriate number of placeholders (question marks) for use in SQL.
+    Not vulnerable to SQL injection attacks, because the input is not inserted to the
+    SQL, it is only counted and converted to an appropriate number of placeholders.
+    """
     return ", ".join("?" for i in range(len(array)))

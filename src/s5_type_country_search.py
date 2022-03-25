@@ -1,4 +1,4 @@
-from helpers import connect, get_placeholders, print_column_titles
+from helpers import connect, safe_get_placeholders, print_column_titles
 
 
 def search_by_type_or_country():
@@ -33,8 +33,8 @@ def search_by_type_or_country():
             INNER JOIN Kaffeparti ON Kaffeparti.ID = PartiID
             INNER JOIN Gård ON GårdID = Gård.ID
         WHERE
-            ForedlingsmetodeNavn NOT IN ({get_placeholders(search_term_processing_methods)})
-            AND Land IN ({get_placeholders(search_term_coutries)})
+            ForedlingsmetodeNavn NOT IN ({safe_get_placeholders(search_term_processing_methods)})
+            AND Land IN ({safe_get_placeholders(search_term_coutries)})
         """,
         (*search_term_processing_methods, *search_term_coutries),
     ):

@@ -39,6 +39,8 @@ def add_tastetest():
             pk = int(input(f"> "))
         except ValueError:
             print_error("Vennligst skriv inn tallet til kaffen du har smakt på.")
+        except EOFError:
+            return
         if pk is not None and pk not in valid_pks:
             print_error(
                 f"Ugyldig valg. Velg en av tallene til kaffene ovenfor {valid_pks}."

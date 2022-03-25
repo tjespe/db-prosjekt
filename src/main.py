@@ -51,3 +51,5 @@ if __name__ == "__main__":
             print_error(
                 f"Vennligst velg en handling ved å skrive inn et tall fra 1 til {len(actions)}."
             )
+        except EOFError:
+            exit()
